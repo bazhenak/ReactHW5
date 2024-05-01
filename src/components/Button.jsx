@@ -1,10 +1,9 @@
 import React, {useState} from "react";
-import {hover} from "@testing-library/user-event/dist/hover";
 
 const StateComponent = () => {
 
     const [countClicks, setCountClicks] = useState(1);
-    const handleOnClick = (event) => {
+    const handleOnClick = () => {
         setCountClicks(countClicks + 1)
     }
 
