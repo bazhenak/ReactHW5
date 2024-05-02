@@ -8,13 +8,22 @@ const StateComponent = () => {
     }
 
     const styles = {
-        background: countClicks % 2 ? 'white' : 'black',
+        background: countClicks % 2 ? '#C8E7EF' : 'darkslategrey',
     }
 
-    document.body.style.background = countClicks % 3 ? 'red' : 'blue'
+    function changeBackground(event) {
+        event.target.style.background = 'blue';
+    }
+    function changeBackgroundBack(event) {
+        event.target.style.background = '';
+    }
+
+
+
+    document.body.style.background = countClicks % 3 ? 'darkseagreen' : '#7FB5B5'
     return (
         <div>
-            <button className={'btn'} style={styles} onClick={handleOnClick}>Click</button>
+            <button className={'btn'} style={styles} onClick={handleOnClick} onMouseOver={changeBackground} onMouseLeave={changeBackgroundBack}>Click</button>
         </div>
     )
 };
